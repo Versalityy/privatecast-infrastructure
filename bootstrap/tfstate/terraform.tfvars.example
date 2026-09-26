@@ -1,0 +1,10 @@
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+location     = "UAE North"
+project_name = "privatecast"
+
+storage_account_name = "stprivatecasttfexample"
+
+allowed_backend_ip = "203.0.113.10"
+
+terraform_principal_object_id = "00000000-0000-0000-0000-000000000000"

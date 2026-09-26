@@ -1,0 +1,27 @@
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+project_name = "privatecast"
+location     = "UAE North"
+
+vnet_address_space = ["10.20.0.0/16"]
+
+server_subnet_address_for_privatecast = [
+  "10.20.1.0/24"
+]
+
+allowed_ssh_ip = "203.0.113.10/32"
+
+vm_size           = "Standard_B2als_v2"
+vm_zone           = "1"
+vm_admin_username = "azureuser"
+
+ssh_public_key_path = "~/.ssh/privatecast_azure.pub"
+
+key_vault_name = "kv-privatecast-dev-example"
+
+alert_email_address = "admin@example.com"
+
+monthly_budget_amount = 50
+budget_start_date     = "2026-09-01T00:00:00Z"
+
+sqlite_backup_storage_account_name = "stprivatecastbackupexample"

@@ -1,0 +1,28 @@
+#cloud-config
+package_update: true
+package_upgrade: false
+
+packages:
+  - docker.io
+  - docker-compose-v2
+
+write_files:
+  - path: /etc/ssh/sshd_config.d/99-privatecast-hardening.conf
+    owner: root:root
+    permissions: "0644"
+    content: |
+      PermitRootLogin no
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+      PermitEmptyPasswords no
+      X11Forwarding no
+      AllowAgentForwarding no
+      MaxAuthTries 3
+
+runcmd:
+  - [systemctl, enable, --now, docker]
+  - [usermod, -aG, docker, "${admin_username}"]
+  - [mkdir, -p, /opt/privatecast]
+  - [chown, -R, "${admin_username}:${admin_username}", /opt/privatecast]
+  - [sshd, -t]
+  - [systemctl, restart, ssh]

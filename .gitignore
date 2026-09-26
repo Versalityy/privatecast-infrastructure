@@ -1,0 +1,43 @@
+# Terraform working directories
+**/.terraform/*
+
+# Terraform state
+*.tfstate
+*.tfstate.*
+terraform.tfstate*
+
+# Terraform plans
+*.tfplan
+*.tfplan.*
+
+# Variable files - may contain subscription IDs, IPs, emails, etc.
+*.tfvars
+*.tfvars.json
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI configuration
+.terraformrc
+terraform.rc
+
+# SSH / private keys
+*.pem
+*.key
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+
+# macOS
+.DS_Store
+
+# VS Code local settings
+.vscode/
